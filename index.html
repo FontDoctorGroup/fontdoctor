@@ -55,8 +55,8 @@
 
   <title>FontDoctor | Academic Research</title>
 
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="static/images/doctor.png">
+  <link rel="apple-touch-icon" href="static/images/doctor.png">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
@@ -162,8 +162,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Empowering MLLMs for High-Precision Defect Detection in Chinese Font
-Libraries</h1>
+            <h1 class="title is-1 publication-title">FontDoctor: Empowering MLLMs for High-Precision Defect Detection in Chinese Font Libraries</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
@@ -236,7 +235,7 @@ Libraries</h1>
           <img src="static/images/录屏2025-12-26%2021.15.13.gif" alt="FontDoctor Architecture" style="width: 100%; object-fit: contain;"/>
         </div>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.
+        Proposed FontDoctor, a multimodal large model for high-precision defect localization in Chinese font defect detection. Utilized SVG XML code as an intermediary modality connecting raster font images and fine-grained vector font data, allowing MLLMs to directly interpret SVG XML code for high-precision defect marking.
       </h2>
     </div>
   </div>
@@ -248,7 +247,7 @@ Libraries</h1>
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            汉字字体不仅是中华文化传承的载体，更是东方美学的视觉呈现。虽然社会对多样化字体的渴望空前高涨，但现有的制作工艺难以逾越海量字符绘制与复杂协同流程带来的挑战，特别是人工质检固有的低效性。针对汉字字体质量检查的需求，本文提出FontDoctor，一款对汉字字体缺陷高精度定位的字体缺陷检测多模态大模型。FontDoctor 具有few-shot template-referenced 和 non-referenced universal 两类互补的汉字字体缺陷检测范式。为了将缺陷检测任务有效整合进 MLLM，我们利用 SVG XML 在汉字字形光栅图像与矢量数据间建立语义映射，使模型能够通过理解SVG  实现精确地定位并标记字形缺陷。针对多模板带来的上下文瓶颈，我们将离散 SVG  XML 字符流转化为稠密视觉嵌入，使MLLM视觉编码器兼具“语义理解”与“数据压缩”的双重功能，实现极具紧凑性的特征表示。为推动字体缺陷检测技术发展，我们提出一个包含两百万个字形大规模字体缺数据集CFDefect-2M。据我们所知，本文是首个专注于汉字字体缺陷检测的工作。大量实验表明，Font Docto不仅实现了最先进性能，更展现出融入专业汉字字体设计工作流的巨大潜力。
+            Chinese characters are not only a medium for the transmission of Chinese culture but also a visual manifestation of Eastern aesthetics. Despite rising demand for diverse fonts, production remains constrained by inefficient manual quality control across many characters and complex workflows. To address the need for Chinese font quality inspection, this paper introduces FontDoctor, a multimodal large model for intelligent defect detection and labeling in Chinese fonts. FontDoctor features two complementary defect detection paradigms: few-shot template-referenced and non-referenced universal approaches. To effectively integrate defect detection into MLLM, we establish a semantic mapping between raster images of Chinese characters and vector data using SVG XML, allowing the model to accurately locate and label font defects by understanding SVG files. To overcome the contextual bottleneck caused by multiple templates, we convert the discrete SVG XML character stream into dense visual embeddings, enabling the MLLM's visual encoder to combine both semantic understanding and data compression, achieving highly compact feature representations. We introduce CFDefect-2M, a 2M-character dataset for font defect detection. To our knowledge, this is among the first studies on Chinese font defect detection. Experiments show that FontDoctor achieves state-of-the-art  performance and shows strong potential for integration into professional workflows.
           </p>
         </div>
       </div>
@@ -265,9 +264,8 @@ Libraries</h1>
         </div>
         <div class="content has-text-justified">
           <p>
-            <b>Figure 1. The overall framework of FontDoctor.</b>
-            The system consists of two main branches: the few-shot template-referenced branch and the non-referenced universal branch.
-            We leverage the SVG XML to bridge the semantic gap between visual glyphs and vector representations, enabling the MLLM to precise locate defects.
+            <b>Overview of FontDoctor.</b>
+            We encode Bezier-based glyphs into SVG XML as an intermediate modality bridging visual and topological semantics, enabling precise defect localization within the MLLM framework. To mitigate the sequence overhead introduced by multiple reference templates, we employ SVG optical compression to significantly reduce token length. The model flexibly supports both few-shot template-referenced and non-referenced universal modes, utilizing sequence concatenation ($\|$) to seamlessly toggle between these configurations.
           </p>
         </div>
       </div>
@@ -278,30 +276,30 @@ Libraries</h1>
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">Model detection example</h2>
+      <h2 class="title is-3 has-text-centered">Model Detection Example</h2>
       <div id="results-carousel2" class="carousel results-carousel">
        <div class="item">
         <img src="static/images/视频1.gif" alt="First research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          First example.
         </h2>
       </div>
       <div class="item">
         <img src="static/images/视频2.gif" alt="Second research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          Second example.
         </h2>
       </div>
       <div class="item">
         <img src="static/images/视频3.gif" alt="Third research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-         Third image description.
+         Third example.
        </h2>
      </div>
      <div class="item">
       <img src="static/images/视频4.gif" alt="Fourth research result visualization" loading="lazy"/>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
+        Fourth example.
       </h2>
     </div>
   </div>
@@ -311,7 +309,7 @@ Libraries</h1>
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">Dataset example</h2>
+      <h2 class="title is-3 has-text-centered">Dataset Example</h2>
       <div id="results-carousel3" class="carousel results-carousel">
        <div class="item">
         <img src="static/images/p1.jpg" alt="First research result visualization" loading="lazy"/>
@@ -454,34 +452,118 @@ Libraries</h1>
 <!--    </div>-->
 <!--  </div>-->
 <!--</section>-->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
+<!--<section class="hero is-small is-light">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      <h2 class="title">Poster</h2>-->
 
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
+<!--      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">-->
+<!--          </iframe>-->
 
-      </div>
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+<!--<section class="section" id="BibTeX">-->
+<!--    <div class="container is-max-desktop content">-->
+<!--      <div class="bibtex-header">-->
+<!--        <h2 class="title">BibTeX</h2>-->
+<!--        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">-->
+<!--          <i class="fas fa-copy"></i>-->
+<!--          <span class="copy-text">Copy</span>-->
+<!--        </button>-->
+<!--      </div>-->
+<!--      <pre id="bibtex-code"><code>@article{YourPaperKey2024,-->
+<!--  title={Your Paper Title Here},-->
+<!--  author={First Author and Second Author and Third Author},-->
+<!--  journal={Conference/Journal Name},-->
+<!--  year={2024},-->
+<!--  url={https://your-domain.com/your-project-page}-->
+<!--}</code></pre>-->
+<!--    </div>-->
+<!--</section>-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="content has-text-centered">
+          <img src="static/images/f6.jpg" alt="FontDoctor Architecture" style="width: 100%; object-fit: contain;"/>
+        </div>
+      <h2 class="subtitle has-text-centered">
+        Artificially created pseudo-character defect detection.
+      </h2>
     </div>
-  </section>
-<section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
+  </div>
+</section>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="content has-text-centered">
+          <img src="static/images/f7.jpg" alt="FontDoctor Architecture" style="width: 100%; object-fit: contain;"/>
+        </div>
+      <h2 class="subtitle has-text-centered">
+        Defect detection through component-level feature decomposition.
+      </h2>
     </div>
+  </div>
+</section>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="content has-text-centered">
+          <img src="static/images/f15.jpg" alt="FontDoctor Architecture" style="width: 100%; object-fit: contain;"/>
+        </div>
+      <h2 class="subtitle has-text-centered">
+        Visualization results of cross-style defect detection. The model marks the style differences as defects, validating its reliance on the reference template style.
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="content has-text-centered">
+          <img src="static/images/f16.jpg" alt="FontDoctor Architecture" style="width: 100%; object-fit: contain;"/>
+        </div>
+      <h2 class="subtitle has-text-centered">
+        Visualization of the cross-style dependency validation experiment results. By artificially introducing style conflicts to construct mixed reference templates, the model marks input areas that conform to general norms but do not match the reference template’s style as defects.
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="content has-text-centered">
+          <img src="static/images/f17.jpg" alt="FontDoctor Architecture" style="width: 100%; object-fit: contain;"/>
+        </div>
+      <h2 class="subtitle has-text-centered">
+        Visualization of the stroke-level feature decomposition experiment. The original reference character is decomposed into independent stroke paths and randomly shuffled, thereby completely disrupting its global structural information.
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="content has-text-centered">
+          <img src="static/images/f25.jpg" alt="FontDoctor Architecture" style="width: 100%; object-fit: contain;"/>
+        </div>
+      <h2 class="subtitle has-text-centered">
+        Cross-language defect detection.
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="content has-text-centered">
+          <img src="static/images/f26.jpg" alt="FontDoctor Architecture" style="width: 100%; object-fit: contain;"/>
+        </div>
+      <h2 class="subtitle has-text-centered">
+        Vector icon defect detection.
+      </h2>
+    </div>
+  </div>
 </section>
 <footer class="footer">
   <div class="container">
