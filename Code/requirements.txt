@@ -1,0 +1,25 @@
+# FontDoctor runtime dependencies
+# (foundation backbones are loaded from their official HuggingFace repos)
+
+torch>=2.4.0
+transformers>=4.51.0        # official Qwen3 / Qwen2.5-VL implementations
+tokenizers>=0.21.0
+accelerate>=0.30.0
+safetensors>=0.4.0
+huggingface_hub>=0.24.0
+
+# vision / rendering
+pillow>=10.0.0
+cairosvg>=2.7.0             # accurate SVG rasterization (evaluation)
+numpy>=1.26.0
+
+# misc
+pyyaml>=6.0
+tqdm>=4.66.0
+
+# optional
+# flash-attn>=2.6.0         # faster ViT / LM attention
+# einops>=0.7.0             # imported (unused) by upstream DeepEncoder
+# easydict>=1.10            # used once by upstream DeepEncoder config
+# torchvision>=0.19.0       # not required (built-in transforms are used)
+# scipy>=1.11.0
