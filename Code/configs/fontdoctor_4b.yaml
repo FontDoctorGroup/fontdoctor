@@ -1,6 +1,4 @@
 # FontDoctor-4B configuration (paper defaults)
-# Language backbone: official Qwen3-4B (hidden 2560 / 36 layers / context 40960)
-
 language:
   model_name_or_path: Qwen/Qwen3-4B
   hidden_size: 2560
